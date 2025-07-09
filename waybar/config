@@ -6,7 +6,7 @@
 
     "modules-left": ["hyprland/workspaces", "group/usage"],
     "modules-center": ["clock"],
-    "modules-right": ["wireplumber", "group/bat", "group/net", "tray"],
+    "modules-right": ["pulseaudio", "group/bat", "group/net", "tray",  "custom/power" ],
 
     "group/usage": {
         "orientation": "horizontal",
@@ -20,7 +20,7 @@
 
     "group/net": {
         "orientation": "horizontal",
-        "modules": ["hyprland/language", "network", "bluetooth"]
+        "modules": ["network"]
     },
 
     "hyprland/workspaces": {
@@ -50,10 +50,34 @@
         "format": "{:%d.%m.%Y | %H:%M}"
     },
 
+    "custom/power" : {
+        "format" : "⏻",
+        "tooltip" : false,
+        "on-click" : "wlogout",
+    },
+
     "wireplumber": {
         "format": "\udb81\udd7e  {volume}%",
         "max-volume": 100,
         "scroll-step": 5
+    },
+    "pulseaudio": {
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": " {volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [ "", "", "" ]
+      },
+      "on-click": "pavucontrol"
     },
 
     "battery": {
@@ -75,17 +99,15 @@
     "temperature": {
         "format": " {temperatureC}°C"
     },
-
     "network": {
-        "format": "",
-        "format-ethernet": "\udb83\udc9d ",
-        "format-wifi": "{icon} ",
-        "format-disconnected": "\udb83\udc9c ",
-        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "Disconnected",
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "tooltip-format": "{ifname} via {gwaddr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": "Disconnected ⚠",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
 
     "bluetooth": {
         "format": "\udb80\udcaf",

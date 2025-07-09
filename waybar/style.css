@@ -30,7 +30,7 @@
     border-radius: 3px;
 }
 
-#wireplumber,
+#pulseaudio,
 #bat,
 #tray,
 #usage,
@@ -47,4 +47,13 @@
 #language,
 #network {
     margin-right: 0.8em;
+}
+#custom-power {
+    background-color: transparent;
+    color: #fefcfd;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
 }
