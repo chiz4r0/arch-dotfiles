@@ -69,25 +69,25 @@ return {
             hidden = true,
           })
         end,
-        desc = "List files in current working directory"
+        desc = "List files in current working directory",
       },
       {
         ";r",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep({
-            additional_args = { "--hidden" }
+            additional_args = { "--hidden" },
           })
         end,
-        desc = "Search for a string in your current working directory"
+        desc = "Search for a string in your current working directory",
       },
       {
-        "////",
+        ";b",
         function()
           local builtin = require("telescope.builtin")
           builtin.buffers()
         end,
-        desc = "List open buffers"
+        desc = "List open buffers",
       },
       {
         ";t",
@@ -95,7 +95,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.help_tags()
         end,
-        desc = "List available help tags and opens a ne window"
+        desc = "List available help tags and opens a ne window",
       },
       {
         ";;",
@@ -103,7 +103,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.resume()
         end,
-        desc = "Resume the previouse telescope picker"
+        desc = "Resume the previouse telescope picker",
       },
       {
         ";e",
@@ -111,7 +111,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
         end,
-        desc = "List diagnostics for all open buffers or a specific buffer"
+        desc = "List diagnostics for all open buffers or a specific buffer",
       },
       {
         ";s",
@@ -119,7 +119,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
-        desc = "List function name, variables, from Treesitter"
+        desc = "List function name, variables, from Treesitter",
       },
       {
         ";c",
@@ -127,7 +127,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.lsp_incoming_calls()
         end,
-        desc = "List LSP incoming calls for word under the cursor"
+        desc = "List LSP incoming calls for word under the cursor",
       },
       {
         "sf",
@@ -213,8 +213,8 @@ return {
   },
 
   {
-    'nvim-telescope/telescope-file-browser.nvim',
-    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {
